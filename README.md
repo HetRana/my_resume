@@ -19,6 +19,12 @@ A modern, responsive, high-performance personal portfolio built for **Het D. Ran
 - **Ambient Cursor Aura**: Smooth lag-damped glow trailing the pointer.
 - **Live Surat IST Clock**: Real-time ticking clock for Surat, Gujarat with live availability status (*Available Now* or *Next Available at 2 PM*).
 - **Interactive Cinema Seat Map Simulator**: Tap any seat on the Movie project card to select/deselect seats with real-time ticket counting and price calculation.
+- **Interactive 3D Spatial Interior Studio**: Switch between Living Suite, Master Bed, and Kitchen layouts with real-time Three.js spatial coordinates HUD, pricing estimates, and PDF docket preview.
+- **Featured Projects Showcase**:
+  - **Creative Touch Interiors**: Enterprise 3D spatial & architecture platform (PHP 8.x, MySQL, Three.js, GSAP, RBAC Auth) co-developed by Het D. Rana & Harsh Chotaliya.
+  - **Online Movie Ticket Booking System**: Full-stack cinema ticketing concept with interactive seat map.
+  - **TaskPulse**: Vanilla JS Kanban workflow board with LocalStorage persistence.
+  - **WeatherScope**: Real-time atmospheric API dashboard.
 - **Live Skills Search & Category Filter**: Instant search input plus category tabs (*All*, *Frontend*, *Backend & DB*, *Tools*, *Soft*).
 - **Contact Form Preset Inquiry Chips**: One-tap template chips (`💼 Internship`, `🚀 Project Collaboration`, `💬 Say Hello`) with a live `0 / 600` character counter.
 - **One-Click Clipboard Copying**: Instant copy for Email (`hetrana00099@gmail.com`) and Phone (`+91 81558 71040`) with toast alerts.

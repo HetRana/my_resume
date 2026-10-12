@@ -309,6 +309,57 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- 9.5. INTERACTIVE 3D SPATIAL STUDIO SIMULATOR (CREATIVE TOUCH INTERIORS) ---
+  const roomTabBtns = document.querySelectorAll('.room-tab-btn');
+  const spatialCoordsDisplay = document.getElementById('spatialCoords');
+  const spatialQuoteDisplay = document.getElementById('spatialLiveQuote');
+  const spatialRoomTitle = document.getElementById('spatialRoomTitle');
+  const spatialDocketBtn = document.getElementById('spatialDocketBtn');
+
+  const roomData = {
+    living: {
+      name: '3D Living Spatial Layout',
+      coords: 'X: 5.4m | Y: 3.2m | Z: 4.8m',
+      quote: '₹4,85,000',
+      specs: 'Italian Statuario Marble • Fluted Charcoal Paneling • Ambient 4000K'
+    },
+    master: {
+      name: '3D Master Suite Spatial Layout',
+      coords: 'X: 4.5m | Y: 3.0m | Z: 3.8m',
+      quote: '₹3,60,000',
+      specs: 'Acoustic Velvet Headboard • Engineered Oak Flooring • Recessed Halo'
+    },
+    kitchen: {
+      name: '3D Modular Kitchen Spatial Layout',
+      coords: 'X: 3.6m | Y: 2.8m | Z: 3.0m',
+      quote: '₹2,95,000',
+      specs: 'Quartz Countertops • Soft-Close Tandem Drawers • Under-Cabinet Strips'
+    }
+  };
+
+  roomTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const roomKey = btn.dataset.room;
+      const data = roomData[roomKey];
+      if (!data) return;
+
+      roomTabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (spatialCoordsDisplay) spatialCoordsDisplay.textContent = data.coords;
+      if (spatialQuoteDisplay) spatialQuoteDisplay.textContent = data.quote;
+      if (spatialRoomTitle) spatialRoomTitle.textContent = data.name;
+
+      showToast(`🛋️ Loaded ${data.name} & pricing docket`);
+    });
+  });
+
+  if (spatialDocketBtn) {
+    spatialDocketBtn.addEventListener('click', () => {
+      showToast('📑 Generated PDF Proposal Docket preview (TCPDF Engine)');
+    });
+  }
+
   // --- 10. QUICK INQUIRY CHIPS FOR CONTACT FORM ---
   const inquiryChips = document.querySelectorAll('.inquiry-chip');
   const subjectInput = document.getElementById('senderSubject');
@@ -406,6 +457,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalCodeLink = document.getElementById('modalCodeLink');
 
   const projectData = {
+    creative_touch: {
+      title: 'Creative Touch Interiors — Enterprise 3D Spatial Architecture Platform',
+      description: 'An enterprise interior design and 3D spatial visualization platform co-developed by Het D. Rana and Harsh Chotaliya. The system unites interactive Three.js WebGL spatial room modeling with real-time architectural cost computation, automated PDF proposal docket compilation, and a 3-tier Role-Based Access Control (RBAC) administrative suite.',
+      features: [
+        'Interactive 3D Spatial Studio: Three.js WebGL viewport allowing clients to orbit camera angles, test lighting presets, and view 3D room volumes in real-time.',
+        'Dynamic Architectural Cost Calculator: Room-by-room calculation engine for surface finishes, dimension meters, premium fixtures, and tax totals.',
+        'Automated PDF Docket Generation (TCPDF/FPDF): Compiles custom architectural specifications into printable, executive-ready client proposals.',
+        '3-Tier Role-Based Access Control (RBAC): Structured administrative suite for Super Admins, Studio Admins, and Receptionists with audit logs.',
+        'Self-Healing Database Engine: Built-in schema health checker and table repair routines (system_repair.php) ensuring zero-downtime database integrity.',
+        'Co-Developed by Het D. Rana & Harsh Chotaliya (Open Source on GitHub).'
+      ],
+      demoLink: 'https://github.com/chotaliyaharsh2404-hash/creative_touch_interiors',
+      codeLink: 'https://github.com/chotaliyaharsh2404-hash/creative_touch_interiors'
+    },
     movie: {
       title: 'Online Movie Ticket Booking System',
       description: 'A full-stack web application designed to streamline the cinema ticketing journey. Users can explore trending films, inspect theater showtimes, pick custom seats via an interactive visual theater layout, calculate dynamic prices, and receive digital booking confirmations.',
